@@ -121,3 +121,4 @@ function gco() {
 	git checkout -b feature/$1
 }
 
+eval "$(zoxide init zsh)"
