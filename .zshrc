@@ -71,8 +71,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    # other plugins...
-    zsh-autosuggestions
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	fast-syntax-highlighting 
+	zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -119,23 +121,3 @@ function gco() {
 	git checkout -b feature/$1
 }
 
-eval "$(zoxide init zsh)"
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-function blah() {
-
-echo $@
-}
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ngoel/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ngoel/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ngoel/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ngoel/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-export LANG=en_US.UTF-8
-export LC_ALL=$LANG
-
-source /Users/ngoel/.docker/init-zsh.sh || true # Added by Docker Desktop
